@@ -20,6 +20,20 @@ state = {
   filter: ''
 };
 
+componentDidMount() {
+  const savedContacts = JSON.parse(localStorage.getItem('contacts'));
+  if(savedContacts){
+  this.setState({contacts: savedContacts});
+};
+};
+
+componentDidUpdate(prevProps, prevState){
+  const {contacts} = this.state;
+  if(contacts !== prevState.contacts){
+  localStorage.setItem('contacts', JSON.stringify(contacts))
+};
+};
+
 formSubmitHandler = ({ name, number }) => {
   const newContact = {
     id: nanoid(),
@@ -47,20 +61,6 @@ handleFilter = () => {
   const normalizedFilter = filter.toLowerCase();
   return contacts.filter((contact) => 
     contact.name.toLowerCase().includes(normalizedFilter));
-};
-
-componentDidMount() {
-  const savedContacts = JSON.parse(localStorage.getItem('contacts'));
-  if(savedContacts){
-  this.setState({contacts: savedContacts});
-};
-};
-
-componentDidUpdate(prevProps, prevState){
-  const {contacts} = this.state;
-  if(contacts !== prevState.contacts){
-  localStorage.setItem('contacts', JSON.stringify(contacts))
-};
 };
 
 render() {

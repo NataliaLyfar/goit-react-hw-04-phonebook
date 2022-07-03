@@ -91,7 +91,8 @@ export const ContactForm = (props) => {
     resetForm();
   };
   return (
-    <Formik initialValues={initialValues}
+    <Formik
+      initialValues={initialValues}
       validationSchema={schema}
       onSubmit={handleSubmit}>
         {props =>
@@ -103,7 +104,8 @@ export const ContactForm = (props) => {
             <Input type="tel" name="number" id={nanoid()}/>
             <FormError name="number"/>
             <Button type='submit'>Add contact</Button>
-        </FormContact>)} 
+        </FormContact>)
+        } 
     </Formik>
   );
 };
