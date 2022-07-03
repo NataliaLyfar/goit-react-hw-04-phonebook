@@ -6,6 +6,7 @@ export const theme = {
       tertiary: 'rgba(10, 78, 131, 0.45)',
       accent: 'rgba(22, 145, 158, 0.7)',
       accentBcg: 'rgba(129, 12, 110)',
+      errorColor: '#EB150B',
     },
     space: [5, 10, 15, 20, 25, 30, 35, 50, 80, 250],
     fonts: {
@@ -26,7 +27,7 @@ export const theme = {
     },
     lineHeights: {
       body: 1.5,
-      heading: 1.125,
+      errorText: 0.85,
     },
     borders: {
       none: 'none',

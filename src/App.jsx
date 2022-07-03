@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import { nanoid } from 'nanoid';
 import { Notify } from 'notiflix';
 import { Container } from './components/container';
@@ -9,7 +9,7 @@ import { ContactList } from 'components/contacts';
 import { Filter } from 'components/filter';
 
 
-export class App extends React.Component {
+export class App extends Component {
 state = {
   contacts: [
     {id: 'id-1', name: 'Rosie Simpson', number: '459-12-56'},
