@@ -80,7 +80,7 @@ const initialValues = {
   number: ''
 };
 
-const pattern = /^[\d\+][\d\(\)\ -]{4,14}\d$/i;
+const pattern = /^[\d+][\d()-]{4,14}\d$/i;
 const schema = yup.object({
   name: yup.string().required(),
   number: yup.string().required().test({
