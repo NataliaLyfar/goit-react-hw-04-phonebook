@@ -30,7 +30,7 @@ componentDidMount() {
 componentDidUpdate(prevProps, prevState) {
   const {contacts} = this.state;
   if(contacts !== prevState.contacts){
-  localStorage.setItem('contacts', JSON.stringify(contacts))
+  localStorage.setItem('contacts', JSON.stringify(contacts));
 };
 };
 

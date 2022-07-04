@@ -66,15 +66,6 @@ const ErrorText = styled.p`
   margin-bottom: ${p => p.theme.space[1]}px;
 `;
 
-const FormError = ({ name }) => {
-  return (
-    <ErrorMessage
-      name={name}
-      render={message => <ErrorText>{message}</ErrorText>}
-    />
-  );
-};
-
 const initialValues = {
   name: '',
   number: ''
@@ -88,18 +79,26 @@ const schema = yup.object({
   }),
 });
 
-export const ContactForm = (props) => {
+const FormError = ({ name }) => {
+  return (
+    <ErrorMessage
+      name={name}
+      render={message => <ErrorText>{message}</ErrorText>}
+    />
+  );
+};
+
+export const ContactForm = ({onSubmit}) => {
   const handleSubmit = (values, {resetForm}) => {
-    props.onSubmit(values);
+    onSubmit(values);
     resetForm();
   };
   return (
     <Formik
       initialValues={initialValues}
       validationSchema={schema}
-      onSubmit={handleSubmit}>
-        {props =>
-        (<FormContact >
+      onSubmit={handleSubmit}>  
+        <FormContact>
             <Label htmlFor='name'><FaUserPlus/>Name</Label>
             <Input type='text' name='name' id={nanoid()}/>
             <FormError name="name"/>
@@ -107,12 +106,11 @@ export const ContactForm = (props) => {
             <Input type="tel" name="number" id={nanoid()}/>
             <FormError name="number"/>
             <Button type='submit'>Add contact</Button>
-        </FormContact>)
-        } 
+        </FormContact>
     </Formik>
   );
 };
 
 ContactForm.propTypes = {
       onSubmit: PropTypes.func.isRequired,
-    };
+  };

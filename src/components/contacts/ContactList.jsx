@@ -12,12 +12,12 @@ align-items: stretch;
 export const ContactList = ({ contacts, onDeleteContact }) => {
     return (
     <List>
-    {contacts.map(({id, name, number}) => (
+      {contacts.map(({id, name, number}) => (
         <Contact key={id} id={id}
             name={name} number={number}
             onDelete={onDeleteContact}
-            />
-        ))}
+        />)
+      )}
     </List>
     );
 };
