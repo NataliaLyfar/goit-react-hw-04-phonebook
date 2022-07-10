@@ -33,15 +33,15 @@ box-shadow: 0px 1px 10px 1px ${p => p.theme.colors.accent};
 `;
 
 export const Contact = ({ id, name, number, onDelete }) => {
-    return (
-        <ListItem key={id} id={id}>
-           {name}: {number}
-            <Button
-              onClick={() => onDelete(id)}>
-              <FaUserMinus/>
-            </Button>
-        </ListItem>
-    );
+  return (
+    <ListItem key={id} id={id}>
+      {name}: {number}
+      <Button
+        onClick={() => onDelete(id)}>
+        <FaUserMinus/>
+      </Button>
+    </ListItem> 
+  );
 };
 
 Contact.propTypes = {

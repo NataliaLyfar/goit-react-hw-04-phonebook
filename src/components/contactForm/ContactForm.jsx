@@ -83,8 +83,7 @@ const FormError = ({ name }) => {
   return (
     <ErrorMessage
       name={name}
-      render={message => <ErrorText>{message}</ErrorText>}
-    />
+      render={message => <ErrorText>{message}</ErrorText>}/>
   );
 };
 
@@ -112,5 +111,5 @@ export const ContactForm = ({onSubmit}) => {
 };
 
 ContactForm.propTypes = {
-      onSubmit: PropTypes.func.isRequired,
-  };
+  onSubmit: PropTypes.func.isRequired,
+};

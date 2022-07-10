@@ -10,7 +10,7 @@ align-items: stretch;
 `;
 
 export const ContactList = ({ contacts, onDeleteContact }) => {
-    return (
+  return (
     <List>
       {contacts.map(({id, name, number}) => (
         <Contact key={id} id={id}
@@ -19,10 +19,10 @@ export const ContactList = ({ contacts, onDeleteContact }) => {
         />)
       )}
     </List>
-    );
+  );
 };
 
 ContactList.propTypes = {
-    contacts: PropTypes.arrayOf(PropTypes.shape).isRequired
+  contacts: PropTypes.arrayOf(PropTypes.shape).isRequired
 };
 

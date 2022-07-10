@@ -9,15 +9,15 @@ color: ${p => p.theme.colors.primary};
 `;
 
 export const Section = ({title, children}) => {
-    return (
-        <section>
-            <Subtitle>{title}</Subtitle>
-            {children}
-        </section>
-    )
+  return (
+    <section>
+      <Subtitle>{title}</Subtitle>
+        {children}
+    </section>
+  );
 };
 
 Section.propTypes = {
-    title: PropTypes.string,
-    children: PropTypes.any,
+  title: PropTypes.string,
+  children: PropTypes.any,
 };
