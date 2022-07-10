@@ -3,12 +3,12 @@ import { nanoid } from 'nanoid';
 import { useLocalStorage } from 'hooks/useLocalStorage';
 import { defaultContacts } from 'data/defaultContacts';
 import { Notify } from 'notiflix';
-import { Container } from 'components/Container';
-import { Header } from 'components/Header';
-import { Section } from 'components/Section';
-import { ContactForm } from 'components/ContactForm';
-import { ContactList } from 'components/Contacts';
-import { Filter } from 'components/Filter';
+import { Container } from 'components/container';
+import { Header } from 'components/header';
+import { Section } from 'components/section';
+import { ContactForm } from 'components/contactForm';
+import { ContactList } from 'components/contacts';
+import { Filter } from 'components/filter';
 
 
 export const App = () => {
