@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { nanoid } from 'nanoid';
-import { useLocalStorage } from 'hooks/useLocalStorage';
-import { defaultContacts } from 'data/defaultContacts';
+import { useLocalStorage } from 'hooks';
+import { defaultContacts } from 'data';
 import { Notify } from 'notiflix';
 import { Container } from 'components/container';
 import { Header } from 'components/header';
@@ -10,9 +10,8 @@ import { ContactForm } from 'components/contactForm';
 import { ContactList } from 'components/contacts';
 import { Filter } from 'components/filter';
 
-
 export const App = () => {
-const [contacts, setContacts] = useLocalStorage('contacts', defaultContacts)
+const [contacts, setContacts] = useLocalStorage('contacts', defaultContacts);
 const [filter, setFilter] = useState('');
  
 const formSubmitHandler = ({ name, number }) => {

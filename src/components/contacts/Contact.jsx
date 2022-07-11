@@ -45,9 +45,9 @@ export const Contact = ({ id, name, number, onDelete }) => {
 };
 
 Contact.propTypes = {
-    id: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    number: PropTypes.string.isRequired,
-    onDelete: PropTypes.func
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  number: PropTypes.string.isRequired,
+  onDelete: PropTypes.func
 };
 
